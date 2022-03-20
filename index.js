@@ -263,6 +263,36 @@ app.get("/meetings", async(request, response) => {
 })
 
 
+app.post("/delete", async(request, response) => {
+    let id = request.body.id;
+    let list = await database.collection('roster').doc(id);
+    let doc = await list.get();
+    let docData = doc.data();
+    console.log(docData);
+    let pms = docData.Product;
+    let gms = docData.General;
+    let ems = docData.Engineering;
+    let dms = docData.Design;
+    let meetings = pms.concat(gms, ems, dms);
+
+
+    meetings.forEach(async (meeting) => {
+        let temp = await database.collection('meetings').doc(meeting);
+        let tempGet = await temp.get();
+        let tempData = tempGet.data();
+        let filtered = tempData.people.filter(people => people != docData.name);
+        temp.update({people: filtered});
+    });
+
+    list.delete();
+    return response.json({"msg" : "good"});
+
+
+
+
+})
+
+
 
 
 
