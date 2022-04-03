@@ -152,7 +152,7 @@ app.post("/create-meeting", async(request, response) => {
     allMeetings.forEach((doc) => {
         let meetingdata = doc.data();
 
-        if(((meetingdata.start <= end && meetingdata.start >= start) ||  (meetingdata.end >= start && meetingdata.end <= end )) && type === meetingdata.type) {
+        if(((meetingdata.start.toMillis() <= end && meetingdata.start.toMillis() >= start) ||  (meetingdata.end.toMillis() >= start && meetingdata.end.toMillis() <= end )) && type === meetingdata.type) {
 
             validTime = true;
             correctMeeting = doc;
@@ -239,6 +239,7 @@ app.post("/create-user", async(request, response) => {
     });
 
     if(!found) {
+
         const temp = await database.collection('roster').add({
             name: `${name}`,
             fellowship: `${type}`,
@@ -287,10 +288,82 @@ app.post("/delete", async(request, response) => {
     list.delete();
     return response.json({"msg" : "good"});
 
+})
 
+app.get("/statsuser", async(request, response) => {
+    let id = request.body.id;
+    console.log(id);
+    let list = await database.collection('roster').doc(id);
+    console.log(list);
+
+    let doc = await list.get();
+    let docData = doc.data();
+    console.log(docData);
+
+    let pms = docData.Product;
+    let gms = docData.General;
+    let ems = docData.Engineering;
+    let dms = docData.Design;
+
+    let meetings = {};
+    pms.forEach((meeting) => {
+        meetings[meeting] = "Product";
+
+    })
+
+    gms.forEach((meeting) => {
+        meetings[meeting] = "General";
+
+    })
+
+    ems.forEach((meeting) => {
+        meetings[meeting] = "Engineering";
+
+    })
+
+    dms.forEach((meeting) => {
+        meetings[meeting] = "Design";
+
+    })
+
+    return response.json(meetings);
+
+})
+
+app.get("/statsmeeting", async(request, response) => {
+    let id = request.body.id;
+
+    let list = await database.collection('meetings').doc(id);
+    let doc = await list.get();
+    let docData = doc.data();
+
+    let people = docData.people;
+    let returned = {};
+
+    let allUsers = await database.collection('roster').get();
+    let users = {};
+    allUsers.forEach((doc) => {
+        let docData = doc.data();
+        let name = docData.name;
+        users[name] = doc.id;
+    });
+
+    people.forEach(async (person) => {
+
+        returned[person] = users[person];
+    })
+
+
+    return response.json(returned);
 
 
 })
+
+
+
+
+
+
 
 
 
