@@ -359,6 +359,117 @@ app.get("/statsmeeting", async(request, response) => {
 
 })
 
+app.post("/deletemeeting", async(request, response) => {
+    let id = request.body.id;
+
+    let list = await database.collection('meetings').doc(id);
+    console.log(list);
+    let doc = await list.get();
+    let docData = doc.data();
+
+    let people = docData.people;
+
+
+
+    let allUsers = await database.collection('roster').get();
+    let users = {};
+    allUsers.forEach((doc) => {
+        let docData = doc.data();
+        let name = docData.name;
+        users[name] = doc.id;
+    });
+
+    people.forEach(async (person)=> {
+        let userID = users[person];
+        let user = await database.collection('roster').doc(userID);
+        let userDoc = await user.get();
+        let userData = userDoc.data();
+        let pms = userData.Product;
+        let gms = userData.General;
+        let dms = userData.Design;
+        let ems = userData.Engineering;
+
+        let pmsTemp = pms.filter((element) => {
+            element != id;
+        })
+        user.update({Product: pmsTemp})
+        let gmsTemp = gms.filter((element) => {
+            element != id;
+        })
+        user.update({General: gmsTemp})
+
+        let dmsTemp = dms.filter((element) => {
+            element != id;
+        })
+        user.update({Design: dmsTemp})
+        let emsTemp = ems.filter((element) => {
+            element != id;
+        })
+
+        user.update({Engineering: emsTemp});
+    })
+    list.delete();
+
+
+
+
+})
+
+
+app.get("/allmeetings", async(request, response) => {
+    let allMeetings = await database.collection('meetings').get();
+    let meetings =[];
+    let index = 0;
+    allMeetings.forEach((meeting) => {
+        let docData = meeting.data();
+        let typeTemp = docData.type;
+        let numberTemp = docData.number;
+        let peopleTemp = docData.people;
+        let startTemp = docData.start.toMillis();
+        let endTemp = docData.end.toMillis();
+        const newUser = {
+            id: meeting.id,
+            type: typeTemp,
+            number: numberTemp,
+            people: peopleTemp,
+            start: startTemp,
+            end: endTemp
+        }
+        meetings.push(newUser);
+    })
+    return response.json(meetings);
+
+})
+
+app.get("/usersAndAttendance", async(request, response) => {
+    let allUsers = await database.collection('roster').get();
+    let users = [];
+    let index=0;
+    allUsers.forEach((doc) => {
+        let docData = doc.data();
+        let tempname = docData.name;
+        let temptype = docData.fellowship;
+        /*const tableinsert= {
+            id: 20
+        }*/
+        const newUser= {
+            id: doc.id,
+            name: docData.name,
+            //name: tempname.replaceAll('\\', ''),
+            fellowship: docData.fellowship
+            //fellowship: temptype.replaceAll('\\', '')
+        }
+        /*let name = docData.name;
+        let type = docData.fellowship;*/
+        jsonString= JSON.stringify(newUser);
+        users[index]=newUser;
+        index++;
+    });
+    //return input.json;
+    return response.json(users);
+});
+
+
 
 
 
