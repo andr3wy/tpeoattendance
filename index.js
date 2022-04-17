@@ -5,11 +5,14 @@ const cors = require("cors");
 const admin = require("./firebase/cred.js");
 const dotenv = require("dotenv").config();
 
+//ADDED WITH JEFFREY
+const path = require("path");
 
 const app = express();
 const port = process.env.PORT;
 
-// const auth = require("./auth/auth.js");
+
+// const auth = require("./auth/index.js");
 
 
 const database = admin.firestore();
@@ -19,6 +22,12 @@ const database = admin.firestore();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+//ADDED WITH JEFFREY
+app.use("/", express.static(path.resolve(__dirname, 'frontend/build')));
+app.get('*', (req, res) => {  console.log(path.resolve(__dirname, 'frontend/build', 'index.html'))
+    res.sendFile(path.resolve(__dirname, 'frontend/build', 'index.html'));})
+
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`)
@@ -409,6 +418,8 @@ app.post("/deletemeeting", async(request, response) => {
         user.update({Engineering: emsTemp});
     })
     list.delete();
+    return response.json({"msg" : "success"})
+
 
 
 
@@ -468,6 +479,7 @@ app.get("/usersAndAttendance", async(request, response) => {
     //return input.json;
     return response.json(users);
 });
+
 
 
 
