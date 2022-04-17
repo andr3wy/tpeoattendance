@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+/*@import "@fontsource/meera-inimai";*/
+
+#Member_Header {
+    /*position: absolute;
+    top: 10%;
+    width: 315px;
+    height: 56px;
+    border: none;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 56px;
+    color: #000000;*/
+    /*position: absolute;*/
+
+
+    /*float: left;*/
+    /*position: absolute;*/
+
+
+    width: 160px;
+    height: 45px;
+    /*display: table-cell;*/
+    position: absolute;
+    top: 10%;
+
+    /*font-family: "Meera Inimai";*/
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 66px;
+    text-align: center;
+
+    color: #000000;
+
+  }
+
+  .member_header_container{
+    position:relative;
+    align-items: center;
+    justify-content: center;
+    left:100%;
+    top:100%;
+  }
+
+  .member_header__button{
+    display:flex;
+    flex: 10;
+    background-color: pink;
+    color:purple;
+    margin:45px;
+  }
+  
+  /*
+  .member_header_container{
+    display:table;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+  }
+
+  .member_header__button{
+    display: table-cell;
+  }*/
+
+  /*.member_header_container{
+    width: 90%;
+    height:45px;
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    justify-content: space-between;
+  }
+
+  .member_header__button{
+    flex: 3;
+    align-items: center;
+  }*/
+
+
+  .membertopbarContainer {
+    height: 100px;
+    width: 90%;
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+    z-index: 999;
+    justify-content: space-between;
+  }
+  
+  .topbarLeft {
+    display: flex;
+  flex-direction: column;
+    flex: 3;
+    align-items: center;
+  }
+
+  .topbarSecond {
+    display: flex;
+  flex-direction: column;
+    flex: 3;
+    align-items: center;
+  }
+
+  .topbarCenter {
+    display: flex;
+  flex-direction: column;
+    flex: 5;
+    align-items: center;
+  }
+
+  .topbarRight {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+  }
+
+  
+
+  #member_container {
+   
+    background-color:#F7F8FC;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    /*display: flex;
+    flex-direction: column;*/
+  }
+
+  
+  
+  #center_events_container {
+    /*position: relative;*/
+    align-items: center;
+      width: 90%;
+      height: 95%;
+      display: flex;
+      flex-direction: column;
+      /*flex:4;*/
+      justify-content: center;
+      margin-left: 40px;
+      margin-right: 40px;
+      /*left: 238px;
+      top: 22px;*/
+      
+      background: #C4C4C4;
+      border-radius: 17px;
+  }
+
+ 
+  

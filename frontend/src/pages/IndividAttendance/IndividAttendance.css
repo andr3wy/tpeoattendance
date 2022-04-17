@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+#Admin_Header {
+    position: absolute;
+    top: 10%;
+    width: 315px;
+    height: 56px;
+    /*left: 455px;
+    top: 108px;*/
+    border: none;
+    display:inline;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 2000;
+    font-size: 48px;
+    line-height: 56px;
+    /*text-align: center;*/
+    color: black;
+  }
+
+
+  #event_button{
+    width: 100%;
+    height: 101px;
+    /*left: 637px;
+    top: 210px;*/
+
+    background: #C4C4C4;
+    /*opacity: 0.3;*/
+    border-radius: 20px;
+    padding: 100px;
+  }
+
+  #function_button{
+    /*position: absolute;*/
+    width: 220px;
+height: 45px;
+    background: #C4C4C4;
+    opacity: 1;
+    border-radius: 20px;
+    margin: 15px
+
+  }
+
+  
+  
+  #page_container {
+    background-color:#e5e5e5;
+    /*align-items: right;*/
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+  }
+  
+  #containerrrrrrr {
+    
+    width: 80%;
+    height: 80%;
+    
+    /*display: flex;
+    position: absolute;
+    flex-direction: row;
+    flex:4;*/
+    display: flex;
+    flex-direction: column;
+    flex:4;
+
+    justify-content: space-around;
+    align-items: center;
+    
+    margin: 40px;
+    /*left: 238px;
+    top: 22px;*/
+    
+    background: white;
+    border-radius: 17px;
+  }
+ 
+#attendance_info{
+  
+    width: 100%;
+    height: 40%;
+    /*display: flex;
+    flex-direction: row;
+    flex:4;
+    position: absolute;*/
+    justify-content: space-around;
+    align-items: center;
+    
+    margin: 40px;
+    
+    background: #FFF3EC;
+    mix-blend-mode: normal;
+    border-radius: 19px;
+}

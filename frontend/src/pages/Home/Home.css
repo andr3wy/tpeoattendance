@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300&display=swap');
+
+#home_header{
+    /*justify-content: center;
+    align-items: center;
+    text-align: center;*/
+    top: 50%;
+    flex:3;
+    width: 401px;
+    height: 54px;
+
+    display: block;
+    /*margin-left: auto;
+    margin-right: auto;*/
+
+
+    font-family: "Almarai";
+    font-style: "normal";
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 54px;
+    /* identical to box height 
+    border: 1px solid #000000;
+    */
+
+    text-align: center;
+
+    color: white;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  #name_input_bar {
+    position: absolute;
+    /*flex:1;
+    height: 200px;*/
+    padding: 0px 15px;
+    border: 1px solid black;
+    background-color: #1195ed;
+    color: white;
+    /*position: absolute;*/
+    width: 300px;
+    height: 45px;
+    top: 40%;
+
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: #2148C0;
+  }
+
+  #all_buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #check_in_button{
+  position: absolute;
+  width: 299px;
+  height: 46px;
+  top: 50%;
+  background: #FFFFFF;
+  border-radius: 4px;
+
+
+font-family: "Almarai";
+font-style: "normal";
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FB9012;
+
+  }
+
+  .meeting_type_buttons {
+    position: absolute;
+    top: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .input-task {
+    height: 32px;
+    width: 300px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  .admin-checkin-button
+  {
+    position: absolute;
+    width: 156px;
+    height: 22px;
+    /*left: 423px;
+    top: 669px;*/
+    left: 44%;
+
+    font-family: "Almarai";
+    font-style: normal;
+    font-size: 20px;
+    line-height: 22px;
+    /*text-align: center;*/
+    background-color:#2148C0;
+    border: none;
+    color: #FFFFFF;
+    top: 95%;
+  }
+
+  #meeting_button{
+    /*position: absolute;*/
+    width: 154px;
+    height: 46px;
+    /*left: 531px;
+    top: 543px;*/
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  #new_container {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+    background: #2148C0;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+
+  

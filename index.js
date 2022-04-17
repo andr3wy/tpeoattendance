@@ -24,8 +24,8 @@ app.use(cors());
 app.use(express.json());
 
 //ADDED WITH JEFFREY
-app.use("/", express.static(path.resolve(__dirname, 'frontend/build')));
-app.get('*', (req, res) => {  console.log(path.resolve(__dirname, 'frontend/build', 'index.html'))
+app.use("/app", express.static(path.resolve(__dirname, 'frontend/build')));
+app.get('/app/*', (req, res) => {  console.log(path.resolve(__dirname, 'frontend/build', 'index.html'))
     res.sendFile(path.resolve(__dirname, 'frontend/build', 'index.html'));})
 
 
