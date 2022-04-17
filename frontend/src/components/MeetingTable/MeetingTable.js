@@ -75,7 +75,7 @@ const api = axios.create({
        await fetch('http://localhost:4000/allmeetings', {
            method: 'GET',
            headers: {
-               'Content-Type': 'application/json',
+            Authorization: "Bearer " + localStorage.getItem("@token"),'Content-Type': 'application/json',
            },
        }).then((response) => {
            response.json().then((json) => {
@@ -140,7 +140,7 @@ const api = axios.create({
       const request = await fetch("http://localhost:4000/create-meeting", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
         },
         body: JSON.stringify({ type: newData.type, start: res, end: resEnd}),
       });
@@ -181,7 +181,7 @@ const api = axios.create({
       const request = await fetch("http://localhost:4000/edit-meeting", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
         },
         //
         body: JSON.stringify({ meetingID: newData.id, type: newData.type, start: newData.start, end: newData.end, people: newData.people }),
@@ -229,7 +229,7 @@ const api = axios.create({
       const request = await fetch("http://localhost:4000/deletemeeting", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
         },
         body: JSON.stringify({ id: oldData.id}),
       });
