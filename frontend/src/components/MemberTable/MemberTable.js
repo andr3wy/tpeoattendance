@@ -72,34 +72,34 @@ const api = axios.create({
   const [errorMessages, setErrorMessages] = useState([])
   let initLoad= false;*/
   let initLoad= false;
-
-  useEffect(() => {
     const fetchData = async () => {
       console.log("penis");
-       await fetch('https://attendancetpeo.herokuapp.com/api/usersAndAttendance', {
-           method: 'GET',
-           headers: {
-                mode: 'cors',
-                Authorization: "Bearer " + localStorage.getItem("@token"),'Content-Type': 'application/json',
-           },
-       }).then((response) => {
-                return response.json()}).then((res) => {
-                   console.log(res.data);
-                   var gendata = res;
-                   console.log('before setting data');
-                   setData(gendata);
+      await fetch('https://attendancetpeo.herokuapp.com/api/usersAndAttendance', {
+        method: 'GET',
+        headers: {
+          mode: 'cors',
+          Authorization: "Bearer " + localStorage.getItem("@token"),'Content-Type': 'application/json',
+        },
+      }).then((response) => {
+        return response.json()}).then((res) => {
+        console.log(res.data);
+        var gendata = res;
+        console.log('before setting data');
+        setData(gendata);
 
 
 
-       }).catch(error => {
-           console.log(error);
-       })
-       }
+      }).catch(error => {
+        console.log(error);
+      })
+    }
+  useEffect(() => {
+
        /*if (initLoad=== false){
         fetchData();
        }*/
        fetchData();
-   }, [data])
+   }, [])
   
    /*async function loadData(){
     console.log("inside load data");
@@ -206,6 +206,7 @@ const api = axios.create({
     }*/
     
   }
+    fetchData();
 }
 
   //const handleRowUpdate = (newData, oldData, resolve) => {
@@ -264,7 +265,7 @@ const api = axios.create({
       resolve()
       */
     }
-
+    fetchData();
     
   }
 
@@ -302,6 +303,7 @@ const api = axios.create({
         setIserror(true)*/
         resolve()
       }
+    fetchData();
       //)
   }
 
