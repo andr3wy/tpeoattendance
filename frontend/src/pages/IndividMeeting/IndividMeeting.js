@@ -1,5 +1,5 @@
 //import "./AdminCheckIn.css";
-import "./IndividMeeting.css";
+// import "./IndividMeeting.css";
 import Topbar from "../../components/topbar/Topbar";
 import { useEffect, useState, Fragment } from "react";
 import { useNavigate } from "react-router-dom";
