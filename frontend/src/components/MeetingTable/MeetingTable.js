@@ -200,12 +200,16 @@ const api = axios.create({
           const index = oldData.tableData.id;
           dataUpdate[index] = newData;
           setData([...dataUpdate]);
+
           console.log("data update after row update " +dataUpdate);
-          console.log("set data after row update " + setData);
+          console.log("set data after row update " + data);
           resolve()
           /*setIserror(false)
           setErrorMessages([])*/
       }
+         else {
+           console.log("errrorr");
+        }
       //})
       /*.catch(error => {
         setErrorMessages(["Cannot add data. Server error!"])
