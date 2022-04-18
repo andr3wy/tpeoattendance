@@ -14,6 +14,7 @@ import NewEvent from "./pages/NewEvent/NewEvent.js";
 import EditMembers from "./pages/EditMembers/EditMembers.js";
 import IndividAttendance from "./pages/IndividAttendance/IndividAttendance.js";
 import "@fontsource/almarai";//
+import IndividMeeting from "./pages/IndividMeeting/IndividMeeting.js";
 
 
 
