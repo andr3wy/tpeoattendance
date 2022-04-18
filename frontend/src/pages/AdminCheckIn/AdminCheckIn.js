@@ -25,7 +25,7 @@ export default function AdminCheckIn(props) {
                         history.push('/app/NewEvent')
                         }}>Create an Event</button> 
                     <button id= "event_button" onClick={() => history.push("/app/EditAccount")}>Edit Account</button>
-                    <button id= "event_button" onClick={() => history.push("/app/MemberSearch")}>Member Search</button>
+                    <button id= "event_button" onClick={() => history.push("/app/EditMembers")}>Member Search</button>
                     <button id= "event_button" onClick={() => history.push("/app/EditMembers")}>Add/Remove Member</button>
             </div>
         </div>
