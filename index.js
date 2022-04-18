@@ -103,6 +103,7 @@ app.post("/api/checkin", async(request, response) => {
 app.post("/api/change-name", auth, async(request, response) => {
     let name = request.body.name;
     let newName = request.body.newName;
+    let newFellowship = request.body.fellowship;
 
     let temp = await database.collection('roster').where('name', '==', name).get();
     if(temp.empty) {
@@ -111,6 +112,7 @@ app.post("/api/change-name", auth, async(request, response) => {
         temp.forEach((doc) => {
             let docData = doc.data();
             docData.name = newName;
+            docData.fellowship = newFellowship;
             let pms = docData.Product;
             let gms = docData.General;
             let ems = docData.Engineering;

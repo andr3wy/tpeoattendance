@@ -98,7 +98,7 @@ const api = axios.create({
        /*if (initLoad=== false){
         fetchData();
        }*/
-       fetchData();
+       // fetchData();
    }, [data])
   
    /*async function loadData(){
