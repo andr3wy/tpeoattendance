@@ -13,6 +13,7 @@ import AdminCheckIn from "./pages/AdminCheckIn/AdminCheckIn.js";
 import NewEvent from "./pages/NewEvent/NewEvent.js";
 import EditMembers from "./pages/EditMembers/EditMembers.js";
 import IndividAttendance from "./pages/IndividAttendance/IndividAttendance.js";
+import IndividMeeting from "./pages/IndividMeeting/IndividMeeting.js";
 import "@fontsource/almarai";//
 
 
@@ -61,6 +62,9 @@ export default function App() {
                 <Route exact path='/app/IndividAttendance'>
                     <IndividAttendance/>
                 </Route>
+                <Route exact path='/IndividMeeting'>
+            <IndividMeeting/>
+          </Route>
             </Switch>
         </BrowserRouter>
 

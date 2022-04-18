@@ -24,7 +24,8 @@ import ViewColumn from '@material-ui/icons/ViewColumn';
 import axios from 'axios'
 import Alert from '@material-ui/lab/Alert';
 
-import  "../../pages/IndividAttendance/IndividAttendance.js";
+//import  "../../pages/IndividAttendance/IndividAttendance.js";
+import  "../../pages/IndividMeeting/IndividMeeting.js";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -280,14 +281,16 @@ const api = axios.create({
             <MaterialTable
               id= "materialTable"
               style={{ width: '80vw',  left: '-30%', top: '-20%'}}
-              title="Member Manager"
+              title="Meeting Manager"
               columns={columns}
               data={data}
               icons={tableIcons}
               //onRowClick={onRowClick}
               onRowClick={(event, rowData) => {
                 //for a static path with no params
-                history.push("/IndividAttendance");
+                console.log(rowData.id);
+                history.push({pathname:"/IndividMeeting",
+                state: {id: rowData.id}});
                 //for dynamic path with id coming from data, feel free to edit history.push above
               }}
               editable={{
