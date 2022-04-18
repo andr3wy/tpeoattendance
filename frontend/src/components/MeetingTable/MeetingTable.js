@@ -68,30 +68,29 @@ const api = axios.create({
   
   
   //for error handling
-  
-
-  useEffect(() => {
     const fetchData = async () => {
-       await fetch('https://attendancetpeo.herokuapp.com/api/allmeetings', {
-           method: 'GET',
-           headers: {
-            Authorization: "Bearer " + localStorage.getItem("@token"),'Content-Type': 'application/json',
-           },
-       }).then((response) => {
-           response.json().then((json) => {
-               //initLoad= true;
-               var gendata = json;
-               console.log('before setting data');
-               setData(gendata); 
-               console.log('new set data '+ data);
-           })
-       }).catch(error => {
-           console.log(error);
-       })
-       }
+      await fetch('https://attendancetpeo.herokuapp.com/api/allmeetings', {
+        method: 'GET',
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("@token"),'Content-Type': 'application/json',
+        },
+      }).then((response) => {
+        response.json().then((json) => {
+          //initLoad= true;
+          var gendata = json;
+          console.log('before setting data');
+          setData(gendata);
+          console.log('new set data '+ data);
+        })
+      }).catch(error => {
+        console.log(error);
+      })
+    }
+  useEffect(() => {
+
        fetchData();
-   }, [data])
-  
+   }, [])
+
    
 
   //new,old date just row to be updated
@@ -164,9 +163,11 @@ const api = axios.create({
         }
         console.log("print data");
         console.log(JSON.stringify(data));
+
         //console.log("data var after row add "+ JSON.stringify(data[1])+ "  " +data[2][1] );
 
-  }
+    }
+    fetchData();
 }
 
   //const handleRowUpdate = (newData, oldData, resolve) => {
@@ -222,6 +223,7 @@ const api = axios.create({
       resolve()
       */
     }
+    fetchData();
 
     
   }
@@ -264,6 +266,7 @@ const api = axios.create({
         resolve()
       }
       //)
+    fetchData();
   }
 
 
