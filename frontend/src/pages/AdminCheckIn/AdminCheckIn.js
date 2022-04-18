@@ -21,7 +21,6 @@ export default function AdminCheckIn(props) {
             <div className= "event_buttons">
                     <button id= "event_button" onClick={() => {
                         //console.log(this.route.name);
-                        localStorage.removeItem("@token");
                         //navigate('/NewEvent')
                         history.push('/NewEvent')
                         }}>Create an Event</button> 
