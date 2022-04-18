@@ -301,7 +301,7 @@ app.post("/api/delete", auth, async(request, response) => {
 
 })
 
-app.get("/api/statsuser", auth, async(request, response) => {
+app.post("/api/statsuser", auth, async(request, response) => {
     let id = request.body.id;
     console.log(id);
     let list = await database.collection('roster').doc(id);
