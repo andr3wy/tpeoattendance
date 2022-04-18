@@ -11,7 +11,7 @@ export default function SignIn() {
     async function handleLogin(data) {
         console.log(data);
         if(data.type && data.name) {
-            const request = await fetch("http://localhost:4000/checkin", {
+            const request = await fetch("https://attendancetpeo.herokuapp.com/checkin", {
                 method: "POST",
                 mode: 'cors',
                 headers: {'Content-Type': 'application/json'},

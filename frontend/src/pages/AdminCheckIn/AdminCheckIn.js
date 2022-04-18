@@ -25,9 +25,9 @@ export default function AdminCheckIn(props) {
                         //navigate('/NewEvent')
                         history.push('/NewEvent')
                         }}>Create an Event</button> 
-                    <button id= "event_button" onClick={() => history.push("/EditAccount")}>Edit Account</button>
-                    <button id= "event_button" onClick={() => history.push("/MemberSearch")}>Member Search</button>
-                    <button id= "event_button" onClick={() => history.push("/EditMembers")}>Add/Remove Member</button>
+                    <button id= "event_button" onClick={() => history.push("/app/EditAccount")}>Edit Account</button>
+                    <button id= "event_button" onClick={() => history.push("/app/MemberSearch")}>Member Search</button>
+                    <button id= "event_button" onClick={() => history.push("/app/EditMembers")}>Add/Remove Member</button>
             </div>
         </div>
         <div id= "sidebar">
@@ -35,15 +35,15 @@ export default function AdminCheckIn(props) {
             <div id= "side_bar_buttons">
                     <button id = "function_button" onClick={() => 
                       //navigate('/AdminCheckIn')
-                      history.push('/AdminCheckIn')
+                      history.push('/app/AdminCheckIn')
                       }>Dashboard</button> 
                     <button id = "function_button" onClick={() => 
                       //navigate('/AdminCheckIn')
-                      history.push('/NewEvent')
+                      history.push('/app/NewEvent')
                       }>Events</button>
                     <button id = "function_button" onClick={() => 
                       //navigate('/AdminCheckIn')
-                      history.push("/EditMembers")
+                      history.push("/app/EditMembers")
                       }>Members</button>
             </div>
         </div>

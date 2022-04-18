@@ -76,7 +76,7 @@ const api = axios.create({
   useEffect(() => {
     const fetchData = async () => {
       console.log("penis");
-       await fetch('http://localhost:4000/usersAndAttendance', {
+       await fetch('https://attendancetpeo.herokuapp.com/api/usersAndAttendance', {
            method: 'GET',
            headers: {
                 mode: 'cors',
@@ -163,7 +163,7 @@ const api = axios.create({
     //if there are no errors with row update: all fields complete and valid
     if(errorList.length < 1){
       console.log("handleRowAdd name: "+ newData.name+ " fellowship: " + newData.fellowship);
-      const request = await fetch("http://localhost:4000/create-user", {
+      const request = await fetch("https://attendancetpeo.herokuapp.com//api/create-user", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
@@ -225,7 +225,7 @@ const api = axios.create({
       //api.post("/users", newData)
 
       console.log("handleRowUpdate name: "+ newData.name+ " fellowship: " + newData.fellowship);
-      const request = await fetch("http://localhost:4000/change-name", {
+      const request = await fetch("https://attendancetpeo.herokuapp.com/api/change-name", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
@@ -272,7 +272,7 @@ const api = axios.create({
     
     console.log(" handleRowDelete id: "+ oldData.id+" handleRowDelete name: "+ oldData.name+ " fellowship: " + oldData.fellowship);
     console.log(oldData);
-      const request = await fetch("http://localhost:4000/delete", {
+      const request = await fetch("https://attendancetpeo.herokuapp.com/api/delete", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",

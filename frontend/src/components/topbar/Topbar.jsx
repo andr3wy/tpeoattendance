@@ -11,13 +11,13 @@ export default function Topbar() {
     <div className="topbarContainer">
       <div className="topbarLeft">
       <Home className="HomeIcon" onClick={() => {
-          history.push("/AdminCheckIn");
+          history.push("/app/AdminCheckIn");
         }} />
       <Person className="PersonIcon" onClick={() => {
-          history.push("/EditMembers");
+          history.push("/app/EditMembers");
         }} />
       <Event className="EventIcon" onClick={() => {
-          history.push("/NewEvent");
+          history.push("/app/NewEvent");
         }}/>
       </div>
       <div className="topbarCenter">

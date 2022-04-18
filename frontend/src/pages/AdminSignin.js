@@ -42,7 +42,8 @@ export default function Login() {
 
                 } else {
                     history.push('/app/AdminCheckIn');
-                    localStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+                    localStorage.setItem('@token', response._tokenResponse.idToken);
+                    //response._tokenResponse.refreshToken
 
                 }
 

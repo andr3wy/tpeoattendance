@@ -10,9 +10,11 @@ const path = require("path");
 
 const app = express();
 const port = process.env.PORT;
+const auth = require("./auth/index.js");
 
 
-// const auth = require("./auth/index.js");
+
+
 
 
 const database = admin.firestore();
@@ -33,7 +35,7 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`)
 });
 
-app.post("/checkin", async(request, response) => {
+app.post("/api/checkin", async(request, response) => {
     let name = request.body.name;
 
     let type = request.body.type;
@@ -98,7 +100,7 @@ app.post("/checkin", async(request, response) => {
 });
 
 //TODO: add authentication
-app.post("/change-name", async(request, response) => {
+app.post("/api/change-name", auth, async(request, response) => {
     let name = request.body.name;
     let newName = request.body.newName;
 
@@ -134,11 +136,11 @@ app.post("/change-name", async(request, response) => {
 });
 
 
-app.get("/current-time", async(request, response) => {
+app.get("/api/current-time", auth, async(request, response) => {
     let time = Date.now();
     return response.json({time: time});
 });
-app.get("/all-users", async(request, response) => {
+app.get("/api/all-users", auth, async(request, response) => {
     let allUsers = await database.collection('roster').get();
     let users = {};
     allUsers.forEach((doc) => {
@@ -151,7 +153,7 @@ app.get("/all-users", async(request, response) => {
 
 
 // //create meeting document under meetings collection
-app.post("/create-meeting", async(request, response) => {
+app.post("/api/create-meeting", auth,async(request, response) => {
     let type = request.body.type;
     let start = request.body.start;
     let end = request.body.end;
@@ -195,7 +197,7 @@ app.post("/create-meeting", async(request, response) => {
 });
 
 
-app.post("/edit-meeting", async(request, response) => {
+app.post("/api/edit-meeting", auth,async(request, response) => {
     let meetingID = request.body.meetingID;
     let type = request.body.type;
     let start = request.body.start;
@@ -234,7 +236,7 @@ app.post("/edit-meeting", async(request, response) => {
 
 
 
-app.post("/create-user", async(request, response) => {
+app.post("/api/create-user", auth, async(request, response) => {
     let name = request.body.name;
     let type = request.body.fellowship;
     let nameRoster = await database.collection('roster').get();
@@ -266,14 +268,14 @@ app.post("/create-user", async(request, response) => {
 
 
 
-app.get("/meetings", async(request, response) => {
+app.get("/api/meetings", auth, async(request, response) => {
     let name = request.body.name;
     let nameDocument = await database.collection('roster').where('name', '==', name).get();
 
 })
 
 
-app.post("/delete", async(request, response) => {
+app.post("/api/delete", auth, async(request, response) => {
     let id = request.body.id;
     let list = await database.collection('roster').doc(id);
     let doc = await list.get();
@@ -299,7 +301,7 @@ app.post("/delete", async(request, response) => {
 
 })
 
-app.get("/statsuser", async(request, response) => {
+app.get("/api/statsuser", auth, async(request, response) => {
     let id = request.body.id;
     console.log(id);
     let list = await database.collection('roster').doc(id);
@@ -339,7 +341,7 @@ app.get("/statsuser", async(request, response) => {
 
 })
 
-app.get("/statsmeeting", async(request, response) => {
+app.get("/api/statsmeeting", auth, async(request, response) => {
     let id = request.body.id;
 
     let list = await database.collection('meetings').doc(id);
@@ -368,7 +370,7 @@ app.get("/statsmeeting", async(request, response) => {
 
 })
 
-app.post("/deletemeeting", async(request, response) => {
+app.post("/api/deletemeeting", auth, async(request, response) => {
     let id = request.body.id;
 
     let list = await database.collection('meetings').doc(id);
@@ -427,7 +429,8 @@ app.post("/deletemeeting", async(request, response) => {
 })
 
 
-app.get("/allmeetings", async(request, response) => {
+app.get("/api/allmeetings", auth, async(request, response) => {
+
     let allMeetings = await database.collection('meetings').get();
     let meetings =[];
     let index = 0;
@@ -436,23 +439,50 @@ app.get("/allmeetings", async(request, response) => {
         let typeTemp = docData.type;
         let numberTemp = docData.number;
         let peopleTemp = docData.people;
-        let startTemp = docData.start.toMillis();
-        let endTemp = docData.end.toMillis();
-        const newUser = {
+        //let startTemp = docData.start.toMillis();
+        //let startTemp = docData.start;
+        let startTemp= new Date(docData.start.toMillis()).toISOString();
+
+        let result = startTemp.substring(0,10)+ " " + startTemp.substring(11,16);
+        let endTemp= new Date(docData.end.toMillis()).toISOString();
+        let endresult = endTemp.substring(0,10)+ " " + startTemp.substring(11,16);
+        const newMeeting = {
             id: meeting.id,
             type: typeTemp,
             number: numberTemp,
             people: peopleTemp,
-            start: startTemp,
-            end: endTemp
+            start: result,
+            end: endresult
         }
-        meetings.push(newUser);
+        meetings.push(newMeeting);
     })
     return response.json(meetings);
 
+    // let allMeetings = await database.collection('meetings').get();
+    // let meetings =[];
+    // let index = 0;
+    // allMeetings.forEach((meeting) => {
+    //     let docData = meeting.data();
+    //     let typeTemp = docData.type;
+    //     let numberTemp = docData.number;
+    //     let peopleTemp = docData.people;
+    //     let startTemp = docData.start.toMillis();
+    //     let endTemp = docData.end.toMillis();
+    //     const newUser = {
+    //         id: meeting.id,
+    //         type: typeTemp,
+    //         number: numberTemp,
+    //         people: peopleTemp,
+    //         start: startTemp,
+    //         end: endTemp
+    //     }
+    //     meetings.push(newUser);
+    // })
+    // return response.json(meetings);
+
 })
 
-app.get("/usersAndAttendance", async(request, response) => {
+app.get("/api/usersAndAttendance", auth, async(request, response) => {
     let allUsers = await database.collection('roster').get();
     let users = [];
     let index=0;

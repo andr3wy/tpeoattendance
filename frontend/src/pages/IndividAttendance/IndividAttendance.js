@@ -23,7 +23,7 @@ export default function IndividAttendance(props) {
     const[meeting, setMeetings] = useState({})
     async function handleData(data) {
         console.log(data);
-        const request = await fetch("http://localhost:4000/statsuser", {
+        const request = await fetch("https://attendancetpeo.herokuapp.com/api/statsuser", {
             method: "POST",
             mode: 'cors',
             headers: {Authorization: "Bearer " + localStorage.getItem("@token"),'Content-Type': 'application/json'},

@@ -72,7 +72,7 @@ const api = axios.create({
 
   useEffect(() => {
     const fetchData = async () => {
-       await fetch('http://localhost:4000/allmeetings', {
+       await fetch('https://attendancetpeo.herokuapp.com/api/allmeetings', {
            method: 'GET',
            headers: {
             Authorization: "Bearer " + localStorage.getItem("@token"),'Content-Type': 'application/json',
@@ -137,7 +137,7 @@ const api = axios.create({
     //if there are no errors with row update: all fields complete and valid
     if(errorList.length < 1){
       console.log("handleRowAdd type: "+ newData.type+ " attendance: " + newData.number + " start time: " + newData.start + " end time: " + newData.end);
-      const request = await fetch("http://localhost:4000/create-meeting", {
+      const request = await fetch("https://attendancetpeo.herokuapp.com/api/create-meeting", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
@@ -178,7 +178,7 @@ const api = axios.create({
       //api.post("/users", newData)
 
       console.log("handleRowUpdate type: "+ newData.type+ " attendance: " + newData.number + " start time: " + newData.start + " end time: " + newData.end);
-      const request = await fetch("http://localhost:4000/edit-meeting", {
+      const request = await fetch("https://attendancetpeo.herokuapp.com/api/edit-meeting", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
@@ -226,7 +226,7 @@ const api = axios.create({
     
     console.log(" handleRowDelete id: "+ oldData.id);
     console.log(oldData);
-      const request = await fetch("http://localhost:4000/deletemeeting", {
+      const request = await fetch("https://attendancetpeo.herokuapp.com/api/deletemeeting", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
