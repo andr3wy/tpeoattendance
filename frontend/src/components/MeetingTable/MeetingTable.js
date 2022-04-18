@@ -89,7 +89,7 @@ const api = axios.create({
            console.log(error);
        })
        }
-       // fetchData();
+       fetchData();
    }, [data])
   
    
