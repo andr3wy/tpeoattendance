@@ -12,7 +12,7 @@ export default function HomePage(props) {
                         <div className="column is-5-tablet is-4-desktop is-3-widescreen">
                             <div className="text-center box">
                                 <h1 className="main-title home-page-title">Check-in success!</h1>
-                                <Link to="/">
+                                <Link to="/app">
                                     <button className="button">Back</button>
 
                                 </Link>

@@ -341,7 +341,7 @@ app.post("/api/statsuser", auth, async(request, response) => {
 
 })
 
-app.get("/api/statsmeeting", auth, async(request, response) => {
+app.post("/api/statsmeeting", auth, async(request, response) => {
     let id = request.body.id;
 
     let list = await database.collection('meetings').doc(id);

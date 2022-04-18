@@ -287,7 +287,7 @@ const api = axios.create({
               //onRowClick={onRowClick}
               onRowClick={(event, rowData) => {
                 //for a static path with no params
-                history.push("/IndividAttendance");
+
                 console.log(rowData.id);
                 history.push({pathname:"/IndividMeeting",
                   state: {id: rowData.id}});
