@@ -77,7 +77,13 @@ export default function IndividMeeting(props) {
                     <div id= "attendance_info">
                         {/*<h3 id= "attendance_header"> Meeting</h3>*/}
                         <div id = "meeting_attendance_button">
-                            People: {peoples}
+                            People:
+                            <ul>
+                                {peoples.map((user) => {
+                                    return <li>{user.toUpperCase()}</li>
+                                })}
+                            </ul>
+
                         </div>
 
                     </div>
