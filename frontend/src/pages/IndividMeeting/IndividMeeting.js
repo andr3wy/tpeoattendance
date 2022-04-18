@@ -40,7 +40,7 @@ export default function IndividMeeting(props) {
         let temp = [];
         
         Object.keys(result).forEach((object) => {
-            temp.push(object);
+            temp.push(object) ;
             console.log("temp");
             //console.log()
         })

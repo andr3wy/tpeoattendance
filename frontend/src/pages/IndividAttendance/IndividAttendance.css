@@ -1,55 +1,46 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-#Admin_Header {
-    position: absolute;
+#new_gen_Header {
+    /*position: absolute;*/
     top: 10%;
     width: 315px;
     height: 56px;
-    /*left: 455px;
-    top: 108px;*/
     border: none;
     display:inline;
     font-family: "Roboto";
     font-style: normal;
-    font-weight: 2000;
-    font-size: 48px;
+    font-weight: 1000;
+    font-size: 90px;
     line-height: 56px;
     /*text-align: center;*/
     color: black;
   }
+.test_gen_header{
+  position: absolute;
+width: 243px;
+height: 74px;
+top: 15%;
 
+font-family: 'Meera Inimai';
+font-style: normal;
+font-weight: 400;
+font-size: 45px;
+line-height: 74px;
+/* identical to box height */
 
-  #event_button{
-    width: 100%;
-    height: 101px;
-    /*left: 637px;
-    top: 210px;*/
+text-align: center;
 
-    background: #C4C4C4;
-    /*opacity: 0.3;*/
-    border-radius: 20px;
-    padding: 100px;
-  }
+color: #000000;
+}
 
-  #function_button{
-    /*position: absolute;*/
-    width: 220px;
-height: 45px;
-    background: #C4C4C4;
-    opacity: 1;
-    border-radius: 20px;
-    margin: 15px
-
-  }
-
-  
-  
   #page_container {
     background-color:#e5e5e5;
+    /*top: 20%;
     /*align-items: right;*/
     width: 100vw;
     height: 100vh;
+    display: flex;
     justify-content: center;
     position: absolute;
     align-items: center;
@@ -57,13 +48,10 @@ height: 45px;
   
   #containerrrrrrr {
     
-    width: 80%;
+    top: 40%;
+    width: 20%;
     height: 80%;
     
-    /*display: flex;
-    position: absolute;
-    flex-direction: row;
-    flex:4;*/
     display: flex;
     flex-direction: column;
     flex:4;
@@ -71,18 +59,22 @@ height: 45px;
     justify-content: space-around;
     align-items: center;
     
-    margin: 40px;
-    /*left: 238px;
-    top: 22px;*/
-    
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top:8%;
+
     background: white;
     border-radius: 17px;
   }
  
 #attendance_info{
   
-    width: 100%;
-    height: 40%;
+    width: 60%;
+    height: 70%;
+    /*margin-left:100px;
+    margin-right:40px;*/
+    padding-left: 5%;
+    padding-top: 3%;
     /*display: flex;
     flex-direction: row;
     flex:4;
@@ -95,4 +87,58 @@ height: 45px;
     background: #FFF3EC;
     mix-blend-mode: normal;
     border-radius: 19px;
+}
+
+#attendance_header{
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 49px;
+  
+}
+
+#meeting_attendance_button{
+  width: 150px;
+height: 41px;
+padding-top:10px;
+padding-bottom:10px;
+margin-top: 10px;
+justify-content: center;
+align-items: center;
+display: flex;
+/*left: 442px;
+top: 370px;*/
+
+background: #FFFFFF;
+border-radius: 24px;
+
+}
+
+#full_attendance_section{
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: left;
+}
+
+#attendance_button_header{
+  font-family: 'Meera Inimai';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 39px;
+
+color: #FB9012;
+}
+
+#num_meetings{
+  left:100%;
+  justify-content: space-around;
+  font-family: 'Meera Inimai';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 39px;
+
+color: #000000;
 }

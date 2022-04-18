@@ -94,29 +94,58 @@ export default function IndividAttendance(props) {
 
 
 
-  return (
+    return (
 
-    <Fragment>
-      <div id="page_container">
-        <div id= "containerrrrrrr">
-            <h2 id= "Admin_Header"> Member Information</h2>
-            <div id= "attendance_info">
-                <h3 id= "attendance_header"> Attendance</h3>
-                <div>
-                    Product: {meeting.Product}
-                </div>
-                <div>
-                    General: {meeting.General}
-                </div>
-                <div>
-                    Design: {meeting.Design}
-                </div>
-                <div>
-                    Engineering: {meeting.Engineering}
+        <Fragment>
+          <div id="page_container">
+          <Topbar />
+            <div id= "containerrrrrrr">
+              <h2 className="test_gen_header"> Member Info </h2>
+                {/*<h2 id= "new_gen_Header "> Member Information</h2>*/}
+                <div id= "attendance_info">
+                    <h3 id= "attendance_header"> Attendance</h3>
+                    <div id= "full_attendance_section">
+                      <div id = "meeting_attendance_button">
+                          <h3 id= "attendance_button_header"> Product: </h3> 
+                      </div>
+                      <h3 id = "num_meetings"> {meeting.Product} </h3>
+                    </div>
+    
+                    <div id= "full_attendance_section">
+                      <div id = "meeting_attendance_button">
+                          <h3 id= "attendance_button_header"> General: </h3> 
+                      </div>
+                      <h3 id = "num_meetings"> {meeting.General} </h3>
+                    </div>
+    
+                    <div id= "full_attendance_section">
+                      <div id = "meeting_attendance_button">
+                          <h3 id= "attendance_button_header"> Design: </h3> 
+                      </div>
+                      <h3 id = "num_meetings"> {meeting.Design} </h3>
+                    </div>
+    
+                    <div id= "full_attendance_section">
+                      <div id = "meeting_attendance_button">
+                          <h3 id= "attendance_button_header"> Engineering: </h3> 
+                      </div>
+                      <h3 id = "num_meetings"> {meeting.Engineering} </h3>
+                    </div>
+    
+    
+    
+                    {/*<div id = "meeting_attendance_button">
+                        General: {meeting.General}
+                    </div>
+                    <div id = "meeting_attendance_button">
+                        Design: {meeting.Design}
+                    </div>
+                    <div id = "meeting_attendance_button">
+                        Engineering: {meeting.Engineering}
+                    </div>*/}
                 </div>
             </div>
-        </div>
-        </div>
-    </Fragment>
-  )
+            </div>
+        </Fragment>
+      )
 }
