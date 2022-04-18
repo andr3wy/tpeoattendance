@@ -99,7 +99,7 @@ const api = axios.create({
         fetchData();
        }*/
        fetchData();
-   }, [setData])
+   }, [data])
   
    /*async function loadData(){
     console.log("inside load data");

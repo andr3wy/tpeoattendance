@@ -53,7 +53,7 @@ const api = axios.create({
 
 
 //export default function MeetingTable() {
-  const MeetingTable = (props) => {
+  const MeetingTable = () => {
 
     const history = useHistory();
     const columns = [
@@ -90,7 +90,7 @@ const api = axios.create({
        })
        }
        fetchData();
-   }, [setData])
+   }, [data])
   
    
 
