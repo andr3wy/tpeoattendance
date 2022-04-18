@@ -452,7 +452,8 @@ app.get("/api/allmeetings", auth, async(request, response) => {
             number: numberTemp,
             people: peopleTemp,
             start: result,
-            end: endresult
+            end: endresult,
+            attendancePeople: peopleTemp.length
         }
         meetings.push(newMeeting);
     })

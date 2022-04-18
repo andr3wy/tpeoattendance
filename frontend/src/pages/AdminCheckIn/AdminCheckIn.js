@@ -22,7 +22,7 @@ export default function AdminCheckIn(props) {
                     <button id= "event_button" onClick={() => {
                         //console.log(this.route.name);
                         //navigate('/NewEvent')
-                        history.push('/NewEvent')
+                        history.push('/app/NewEvent')
                         }}>Create an Event</button> 
                     <button id= "event_button" onClick={() => history.push("/app/EditAccount")}>Edit Account</button>
                     <button id= "event_button" onClick={() => history.push("/app/MemberSearch")}>Member Search</button>

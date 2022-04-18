@@ -57,10 +57,10 @@ const api = axios.create({
 
     const history = useHistory();
     const columns = [
-    {title: "id", field: "id"},//, hidden: true},
+    {title: "id", field: "id", hidden:true},
     //{title: "Name", field: "name" },
     {title: "Type", field: "type"},
-    {title: "Attendance", field: "number"},
+    {title: "Attendance", field: "attendancePeople"},
     {title: "Start Date and Time", field: "start"},
     {title: "End Date and Time", field: "end"}
   ]
