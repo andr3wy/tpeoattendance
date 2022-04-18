@@ -61,6 +61,9 @@ export default function App() {
                 <Route exact path='/app/IndividAttendance'>
                     <IndividAttendance/>
                 </Route>
+                <Route exact path='/IndividMeeting'>
+                    <IndividMeeting/>
+                </Route>
             </Switch>
         </BrowserRouter>
 
