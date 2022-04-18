@@ -32,7 +32,7 @@ export default function SignIn() {
                     setErrorMessage(-1);
                     console.log("valid!!");
                     console.log(errorMessage)
-                    window.location.href = `/success`;
+                    window.location.href = `/app/success`;
 
 
                 }
