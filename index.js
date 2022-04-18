@@ -446,6 +446,7 @@ app.get("/api/allmeetings", auth, async(request, response) => {
         let result = startTemp.substring(0,10)+ " " + startTemp.substring(11,16);
         let endTemp= new Date(docData.end.toMillis()).toISOString();
         let endresult = endTemp.substring(0,10)+ " " + startTemp.substring(11,16);
+
         const newMeeting = {
             id: meeting.id,
             type: typeTemp,
