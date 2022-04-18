@@ -231,7 +231,7 @@ const api = axios.create({
         headers: {
           Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
         },
-        body: JSON.stringify({ name: oldData.name, newName:newData.name }),
+        body: JSON.stringify({ name: oldData.name, newName:newData.name,fellowship:newData.fellowship }),
       });
       // Get Status and Response
       const response = await request.json();
