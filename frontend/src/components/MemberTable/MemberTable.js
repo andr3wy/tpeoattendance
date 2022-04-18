@@ -163,7 +163,7 @@ const api = axios.create({
     //if there are no errors with row update: all fields complete and valid
     if(errorList.length < 1){
       console.log("handleRowAdd name: "+ newData.name+ " fellowship: " + newData.fellowship);
-      const request = await fetch("https://attendancetpeo.herokuapp.com//api/create-user", {
+      const request = await fetch("https://attendancetpeo.herokuapp.com/api/create-user", {
         method: "POST",
         headers: {
           Authorization: "Bearer " + localStorage.getItem("@token"),"Content-Type": "application/json",
