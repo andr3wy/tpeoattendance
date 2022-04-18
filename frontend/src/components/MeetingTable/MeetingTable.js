@@ -230,6 +230,7 @@ const api = axios.create({
     
     console.log(" handleRowDelete id: "+ oldData.id);
     console.log(oldData);
+    console.log(oldData + oldData.id);
       const request = await fetch("https://attendancetpeo.herokuapp.com/api/deletemeeting", {
         method: "POST",
         headers: {

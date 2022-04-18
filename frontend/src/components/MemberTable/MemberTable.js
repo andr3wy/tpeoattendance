@@ -272,6 +272,7 @@ const api = axios.create({
     
     console.log(" handleRowDelete id: "+ oldData.id+" handleRowDelete name: "+ oldData.name+ " fellowship: " + oldData.fellowship);
     console.log(oldData);
+    console.log(oldData);
       const request = await fetch("https://attendancetpeo.herokuapp.com/api/delete", {
         method: "POST",
         headers: {
