@@ -1,4 +1,4 @@
-//import "./AdminCheckIn.css";
+// import "./AdminCheckIn.css";
 import "./IndividAttendance.css";
 import { useEffect, useState, Fragment } from "react";
 import { useNavigate } from "react-router-dom";

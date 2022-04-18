@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+#new_gen_Header {
+    /*position: absolute;*/
+    top: 10%;
+    width: 315px;
+    height: 56px;
+    border: none;
+    display:inline;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 90px;
+    line-height: 56px;
+    /*text-align: center;*/
+    color: black;
+}
+.test_gen_header{
+    position: absolute;
+    width: 243px;
+    height: 74px;
+    top: 15%;
+
+    font-family: 'Meera Inimai';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 74px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #000000;
+}
+
+#page_container {
+    background-color:#e5e5e5;
+    /*top: 20%;
+    /*align-items: right;*/
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    align-items: center;
+}
+
+#containerrrrrrr {
+
+    top: 40%;
+    width: 20%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    flex:4;
+
+    justify-content: space-around;
+    align-items: center;
+
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top:8%;
+
+    background: white;
+    border-radius: 17px;
+}
+
+#attendance_info{
+
+    width: 60%;
+    height: 70%;
+    /*margin-left:100px;
+    margin-right:40px;*/
+    padding-left: 5%;
+    padding-top: 3%;
+    /*display: flex;
+    flex-direction: row;
+    flex:4;
+    position: absolute;*/
+    justify-content: space-around;
+    align-items: center;
+
+    margin: 40px;
+
+    background: #FFF3EC;
+    mix-blend-mode: normal;
+    border-radius: 19px;
+}
+
+#attendance_header{
+    font-family: "Roboto";
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 49px;
+
+}
+
+#meeting_attendance_button{
+    width: 150px;
+    height: 41px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    /*left: 442px;
+    top: 370px;*/
+
+    background: #FFFFFF;
+    border-radius: 24px;
+
+}
+
+#full_attendance_section{
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+}
+
+#attendance_button_header{
+    font-family: 'Meera Inimai';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 39px;
+
+    color: #FB9012;
+}
+
+#num_meetings{
+    left:100%;
+    justify-content: space-around;
+    font-family: 'Meera Inimai';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 39px;
+
+    color: #000000;
+}
