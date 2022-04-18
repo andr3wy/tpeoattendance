@@ -90,7 +90,7 @@ const api = axios.create({
        })
        }
        fetchData();
-   }, [props.type])
+   }, [setData])
   
    
 
